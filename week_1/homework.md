@@ -19,7 +19,7 @@ Read the data for January. How many columns are there?
 
 >Answer:
 ```
---rm
+19
 ```
 
 
@@ -36,7 +36,7 @@ What's the standard deviation of the trips duration in January?
 
 >Answer:
 ```
---rm
+42.59
 ```
 
 
@@ -53,7 +53,7 @@ What fraction of the records left after you dropped the outliers?
 
 >Answer:
 ```
---rm
+98%
 ```
 
 
@@ -76,7 +76,7 @@ What's the dimensionality of this matrix (number of columns)?
 
 >Answer:
 ```
---rm
+155
 ```
 
 
@@ -96,7 +96,7 @@ What's the RMSE on train?
 
 >Answer:
 ```
---rm
+7.64
 ```
 
 
@@ -113,7 +113,7 @@ What's the RMSE on validation?
 
 >Answer:
 ```
---rm
+7.81
 ```
 
 ## Submit the results
