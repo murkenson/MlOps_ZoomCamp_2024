@@ -137,6 +137,12 @@ What's the best validation RMSE that you got?
 * 6.336
 
 
+>Answer:
+```
+5.335
+```
+
+
 ## Q6. Promote the best model to the model registry
 
 The results from the hyperparameter optimization are quite good. So, we can assume that we are ready to test some of these models in production. 
@@ -155,6 +161,12 @@ What is the test RMSE of the best model?
 * 5.567
 * 6.061
 * 6.568
+
+>Answer:
+```
+5.567
+```
+
 
 
 ## Submit the results
