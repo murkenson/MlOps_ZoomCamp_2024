@@ -1,0 +1,13 @@
+from typing import Tuple
+import pandas as pd
+
+if 'transformer' not in globals():
+    from mage_ai.data_preparation.decorators import transformer
+
+
+@transformer
+def transform(df: pd.DataFrame) -> pd.DataFrame:
+    df['duration'] = df.tpep_dropoff_datetime - df.tpep_pickup_datetime
+
+    
+    return df

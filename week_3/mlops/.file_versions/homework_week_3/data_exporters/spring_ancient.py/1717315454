@@ -1,0 +1,41 @@
+from typing import Tuple
+import pandas as pd
+from sklearn.feature_extraction import DictVectorizer
+from sklearn.linear_model import LinearRegression
+import mlflow
+import pickle
+from mlflow.exceptions import MlflowException
+
+mlflow.set_tracking_uri("http://localhost:6001")
+
+experiment_name = 'homework_three'
+try:
+    experiment = mlflow.get_experiment_by_name(experiment_name)
+    if experiment is None:
+        experiment_id = mlflow.create_experiment(experiment_name)
+    else:
+        experiment_id = experiment.experiment_id
+    mlflow.set_experiment(experiment_id)
+except MlflowException as e:
+    print(f"Failed to set experiment: {e}")
+    raise
+
+print('artifact uri:', mlflow.get_artifact_uri())
+
+with mlflow.start_run():
+    mlflow.log_param('SIZE', 100)       
+
+def export_data(data: Tuple[DictVectorizer, LinearRegression], **kwargs):
+    dv, lr = data
+
+    # Save DictVectorizer to a file
+    with open('lr-vectorizer.bin', 'wb') as f_out:
+        pickle.dump(dv, f_out)
+
+    # Start MLflow run and log the model and parameters
+    with mlflow.start_run():
+        mlflow.sklearn.log_model(lr, artifact_path="models")
+        mlflow.log_param('intercept', lr.intercept_)
+        mlflow.log_artifact('lr-vectorizer.bin')
+
+    return dv, lr

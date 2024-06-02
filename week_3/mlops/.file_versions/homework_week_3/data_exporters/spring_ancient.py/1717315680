@@ -1,0 +1,35 @@
+import mlflow
+import pickle
+import traceback
+import sys
+
+if 'data_exporter' not in globals():
+    from mage_ai.data_preparation.decorators import data_exporter
+
+@data_exporter
+def export_data(data, *args, **kwargs):
+    dv, model = data
+
+    mlflow.set_tracking_uri("http://mlflow:6001")
+    
+    try:
+        experiment_name = "nyc-taxi-experiment"
+        experiment = mlflow.get_experiment_by_name(experiment_name)
+        if experiment is None:
+            mlflow.create_experiment(experiment_name)
+        mlflow.set_experiment(experiment_name)
+
+        with mlflow.start_run():
+            # Save DictVectorizer to a file
+            with open("encoder.b", "wb") as f_out:
+                pickle.dump(dv, f_out)
+
+            # Log the artifact and the model
+            mlflow.log_artifact("encoder.b", artifact_path="encoder")
+            mlflow.sklearn.log_model(model, artifact_path="model_lr")
+    
+    except Exception as e:
+        print(f"Error occurred: {e}")
+        traceback.print_exc(file=sys.stdout)
+    
+    return data

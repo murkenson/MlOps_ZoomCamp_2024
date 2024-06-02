@@ -1,0 +1,22 @@
+import mlflow
+import pickle
+
+if 'data_exporter' not in globals():
+    from mage_ai.data_preparation.decorators import data_exporter
+
+
+@data_exporter
+def export_data(data, *args, **kwargs):
+    dv, model = data
+
+    mlflow.set_tracking_uri("http://mlflow:6001")
+    mlflow.set_experiment("nyc-taxi-experiment")
+
+    with mlflow.start_run():
+        with open("encoder.b", "wb") as f_out:
+            pickle.dump(dv, f_out)
+
+        mlflow.log_artifact("encoder.b", artifact_path="encoder")
+        mlflow.sklearn.log_model(model, artifact_path="model_lr")
+
+    return data

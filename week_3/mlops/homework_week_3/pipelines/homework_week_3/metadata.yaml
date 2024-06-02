@@ -1,0 +1,168 @@
+blocks:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_source:
+      path: homework_week_3/markdowns/description_homework_three.md
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: markdown
+  name: description_homework_three
+  retry_config: null
+  status: updated
+  timeout: null
+  type: markdown
+  upstream_blocks: []
+  uuid: description_homework_three
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_source:
+      path: homework_week_3/data_loaders/ingestion__yellow_trip_data.py
+  downstream_blocks:
+  - summary_overview_for_ingestion__yellow_trip_data
+  - preparation__yellow_trip_data
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: ingestion_ yellow_trip_data
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_loader
+  upstream_blocks: []
+  uuid: ingestion__yellow_trip_data
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_source:
+      path: homework_week_3/transformers/preparation__yellow_trip_data.py
+  downstream_blocks:
+  - summary_overview_for_preparation__yellow_trip_data
+  - train_model__yellow_trip_data
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: preparation__yellow_trip_data
+  retry_config: null
+  status: executed
+  timeout: null
+  type: transformer
+  upstream_blocks:
+  - ingestion__yellow_trip_data
+  uuid: preparation__yellow_trip_data
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_source:
+      path: homework_week_3/transformers/train_model__yellow_trip_data.py
+  downstream_blocks:
+  - spring_ancient
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: train_model__yellow_trip_data
+  retry_config: null
+  status: executed
+  timeout: null
+  type: transformer
+  upstream_blocks:
+  - preparation__yellow_trip_data
+  uuid: train_model__yellow_trip_data
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_source:
+      path: homework_week_3/data_exporters/spring_ancient.py
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: spring ancient
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_exporter
+  upstream_blocks:
+  - train_model__yellow_trip_data
+  uuid: spring_ancient
+cache_block_output_in_memory: false
+callbacks: []
+concurrency_config: {}
+conditionals: []
+created_at: '2024-06-02 05:30:53.673412+00:00'
+data_integration: null
+description: 'The goal of this homework is to train a simple model for predicting
+  the duration of a ride, but use Mage for it.
+
+
+  We''ll use the same NYC taxi dataset, the Yellow taxi data for 2023.
+
+
+  https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page'
+executor_config: {}
+executor_count: 1
+executor_type: null
+extensions: {}
+name: homework_week_3
+notification_config: {}
+remote_variables_dir: null
+retry_config: {}
+run_pipeline_in_one_process: false
+settings:
+  triggers: null
+spark_config: {}
+tags:
+- homework_week_three
+type: python
+uuid: homework_week_3
+variables_dir: /home/src/mage_data/homework_week_3
+widgets:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    chart_type: table
+    height: 3000
+    index: stats
+    x: headers
+    y: rows
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: summary overview for ingestion__yellow_trip_data
+  retry_config: null
+  status: executed
+  timeout: null
+  type: chart
+  upstream_blocks:
+  - ingestion__yellow_trip_data
+  uuid: summary_overview_for_ingestion__yellow_trip_data
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    chart_type: table
+    height: 3000
+    index: stats
+    x: headers
+    y: rows
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: summary overview for preparation__yellow_trip_data
+  retry_config: null
+  status: executed
+  timeout: null
+  type: chart
+  upstream_blocks:
+  - preparation__yellow_trip_data
+  uuid: summary_overview_for_preparation__yellow_trip_data

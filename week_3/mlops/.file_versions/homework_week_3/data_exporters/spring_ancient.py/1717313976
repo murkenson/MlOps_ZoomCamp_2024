@@ -1,0 +1,37 @@
+from typing import Tuple
+import pandas as pd
+from sklearn.feature_extraction import DictVectorizer
+from sklearn.linear_model import LinearRegression
+import mlflow
+import pickle
+
+# Set the MLflow tracking URI
+mlflow.set_tracking_uri("http://mlflow:6001")
+
+# Try to set the experiment, handle case where it might be deleted
+experiment_name = 'mage_homework_week_3'
+experiment = mlflow.get_experiment_by_name(experiment_name)
+
+if experiment is None or experiment.lifecycle_stage == 'deleted':
+    # Experiment doesn't exist or is deleted, so create a new one
+    experiment_id = mlflow.create_experiment(experiment_name)
+    mlflow.set_experiment(experiment_id)
+else:
+    # Set the existing experiment as active
+    mlflow.set_experiment(experiment_name)
+
+if 'data_exporter' not in globals():
+    from mage_ai.data_preparation.decorators import data_exporter
+
+@data_exporter
+def export_data(data: Tuple[DictVectorizer, LinearRegression], **kwargs):
+    dv, lr = data
+
+    with open('lr-vectorizer.bin', 'wb') as f_out:
+        pickle.dump(dv, f_out)    
+    with mlflow.start_run():
+        mlflow.sklearn.log_model(lr, artifact_path="models")
+        mlflow.log_param('intercept', lr.intercept_)
+        mlflow.log_artifact('lr-vectorizer.bin')
+
+    return dv, lr
