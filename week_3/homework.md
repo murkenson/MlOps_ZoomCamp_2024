@@ -7,9 +7,9 @@ We'll use [the same NYC taxi dataset](https://www1.nyc.gov/site/tlc/about/tlc-tr
 <details>
 <summary>Mage Pipeline Info</summary>
 
-![Pipeline](/static/009_mage_pipeline.png)
-![Pipeline](/static/008_mage_pipeline.png)
-![Pipeline](/static/007_mage_pipeline.png)
+![Pipeline](/week_3/static/009_mage_pipeline.png)
+![Pipeline](/week_3/static/008_mage_pipeline.png)
+![Pipeline](/week_3/static/007_mage_pipeline.png)
 
 
 </details>
@@ -31,7 +31,7 @@ v0.9.70
 <details>
 <summary>Screenshot</summary>
 
-![Question 1.](/static/001_mage_question.png)
+![Question 1.](/week_3/static/001_mage_question.png)
 
 </details>
 </br>
@@ -55,7 +55,7 @@ How many lines are in the created `metadata.yaml` file?
 <details>
 <summary>Screenshot</summary>
 
-![Question 2.](/static/002_mage_question.png)
+![Question 2.](/week_3/static/002_mage_question.png)
 
 </details>
 </br>
@@ -82,7 +82,7 @@ How many records did we load?
 <details>
 <summary>Screenshot</summary>
 
-![Question 3.](/static/003_mage_question.png)
+![Question 3.](/week_3/static/003_mage_question.png)
 
 </details>
 </br>
@@ -128,7 +128,7 @@ What's the size of the result?
 <details>
 <summary>Screenshot</summary>
 
-![Question 1.](/static/004_mage_question.png)
+![Question 1.](/week_3/static/004_mage_question.png)
 
 </details>
 </br>
@@ -161,8 +161,8 @@ Hint: print the `intercept_` field in the code block
 <details>
 <summary>Screenshot</summary>
 
-![Question 5.](/static/005_mage_question_0.png)
-![Question 5.](/static/005_mage_question_1.png)
+![Question 5.](/week_3/static/005_mage_question_0.png)
+![Question 5.](/week_3/static/005_mage_question_1.png)
 
 </details>
 </br>
@@ -238,7 +238,7 @@ Find the logged model, and find MLModel file. What's the size of the model? (`mo
 <details>
 <summary>Screenshot</summary>
 
-![Question 6.](/static/006_mage_question.png)
+![Question 6.](/week_3/static/006_mage_question.png)
 
 </details>
 </br>
