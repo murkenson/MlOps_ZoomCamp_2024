@@ -17,3 +17,7 @@ For this course, you'll need to have the following software installed on your co
 - Python 3 (e.g. via Anaconda)
 - MLflow
 - Mage Ai
+
+# Instructors
+
+- [Alexey Grigorev](https://linkedin.com/in/agrigorev)
