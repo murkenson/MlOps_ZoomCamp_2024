@@ -56,6 +56,18 @@ services:
       - "6001:6001"
     volumes:
       - "${PWD}/mlflow:/home/mlflow/"
+    restart: always
+    networks:
+      - app-network
+  jupyter:
+    build:
+      context: .
+      dockerfile: jupyter.dockerfile
+    ports:
+      - "8888:8888"
+    restart: always
+    volumes:
+      - ./notebooks:/app
     networks:
       - app-network
 networks:
