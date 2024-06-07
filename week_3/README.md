@@ -14,13 +14,14 @@
 
 If don't have bash in your enviroment, modify the following command and run it:
 
-    ```bash
-    PROJECT_NAME=mlops \
-        MAGE_CODE_PATH=/home/src \
-        SMTP_EMAIL=$SMTP_EMAIL \
-        SMTP_PASSWORD=$SMTP_PASSWORD \
-        docker compose up
-    ```
+```bash
+PROJECT_NAME=mlops \
+    MAGE_CODE_PATH=/home/src \
+    SMTP_EMAIL=$SMTP_EMAIL \
+    SMTP_PASSWORD=$SMTP_PASSWORD \
+    docker compose up
+```
+
 It is ok if you get this warning, you can ignore it  
      `The "PYTHONPATH" variable is not set. Defaulting to a blank string.`
 
@@ -29,8 +30,8 @@ It is ok if you get this warning, you can ignore it
 
 1. Open [`http://localhost:6789`](http://localhost:6789) in your browser.
 
-1. In the top left corner of the screen next to the Mage logo and **`mlops`** project name,
+2. In the top left corner of the screen next to the Mage logo and **`mlops`** project name,
    click the project selector dropdown and choose the **`unit_0_setup`** option.
 
-1. Click on the pipeline named **`example_pipeline`**.
-1. Click on the button labeled **`Run @once`**.
+3. Click on the pipeline named **`example_pipeline`**.
+4. Click on the button labeled **`Run @once`**.
