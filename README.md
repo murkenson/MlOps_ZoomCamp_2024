@@ -9,6 +9,7 @@ Welcome to the MlOps Zoomcamp 2024 repository! Here, you can find the completed 
 | Module 1: Introduction 🚀 | - What is MLOps <br> - MLOps maturity model <br> - Running example: NY Taxi trips dataset <br> - Why do we need MLOps <br> - Course overview <br> - Environment preparation | [Homework](week_1/homework.md) |
 | Module 2: Experiment tracking and model management 🚀 | - Experiment tracking intro <br> - Getting started with MLflow <br> - Experiment tracking with MLflow <br> - Saving and loading models with MLflow <br> - Model registry <br> - MLflow in practice | [Homework](week_2/homework.md) |
 | Module 3: Orchestration and ML Pipelines 🚀 | - Workflow orchestration <br> - Mage <br> | [Homework](week_3/homework.md) |
+| Module 4: Model Deployment 🚀 | - Three ways of model deployment: Online (web and streaming) and offline (batch) <br> - Web service: model deployment with Flask <br> - Streaming: consuming events with AWS Kinesis and Lambda <br> - Batch: scoring data offline | [Homework](week_4/homework.md) |
 
 ## Tools
 For this course, you'll need to have the following software installed on your computer:
