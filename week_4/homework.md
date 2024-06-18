@@ -184,5 +184,5 @@ docker push agrigorev/zoomcamp-model:mlops-2024-3.10.13-slim
 
 ## Submit the results
 
-* Submit your results here: TBA
+* Submit your results here: https://courses.datatalks.club/mlops-zoomcamp-2024/homework/hw4
 * It's possible that your answers won't match exactly. If it's the case, select the closest one.
