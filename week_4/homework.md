@@ -19,6 +19,10 @@ What's the standard deviation of the predicted duration for this dataset?
 * 12.28
 * 18.28
 
+>Answer:
+```
+6.24
+```
 
 ## Q2. Preparing the output
 
@@ -50,6 +54,11 @@ What's the size of the output file?
 * 56M
 * 66M
 
+>Answer:
+```
+66M
+```
+
 __Note:__ Make sure you use the snippet above for saving the file. It should contain only these two columns. For this question, don't change the
 dtypes of the columns and use `pyarrow`, not `fastparquet`. 
 
@@ -59,6 +68,11 @@ dtypes of the columns and use `pyarrow`, not `fastparquet`.
 Now let's turn the notebook into a script. 
 
 Which command you need to execute for that?
+
+>Answer:
+```
+jupyter nbconvert --to script homework.ipynb
+```
 
 
 ## Q4. Virtual environment
@@ -74,6 +88,10 @@ dependencies we use for the virtual env.
 
 What's the first hash for the Scikit-Learn dependency?
 
+>Answer:
+```
+057b991ac64b3e75c9c04b5f9395eaf19a6179244c089afdebaad98264bff37c
+```
 
 ## Q5. Parametrize the script
 
@@ -90,6 +108,11 @@ What's the mean predicted duration?
 * 28.29
 
 Hint: just add a print statement to your script.
+
+>Answer:
+```
+14.29
+```
 
 
 ## Q6. Docker container 
@@ -131,6 +154,11 @@ for May 2023?
 * 7.24
 * 14.24
 * 21.19
+
+>Answer:
+```
+0.19
+```
 
 ## Bonus: upload the result to the cloud (Not graded)
 
